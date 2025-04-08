@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1b2fe990c2a3d4c9464f9f5cef873f, type: 3}
+  m_Name: Mascara
+  m_EditorClassIdentifier: 
+  _name: "M\xE1scara de Gas"
+  _description: "Te permitira moverte en \xE1reas con gas t\xF3xico."
+  _prefab: {fileID: 8463891353075273396, guid: 0e5fc0a5838a04a4098a8c8e9a4be0b7, type: 3}
+  _sprite: {fileID: 21300000, guid: ae61a3a84fcdf4e449ce536dccaed216, type: 3}
