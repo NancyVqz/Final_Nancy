@@ -8,8 +8,8 @@ public class Move : MonoBehaviour
     private float movZ;
 
     private float crouchSpeed = 2;
-    private float walkspeed = 4f;
-    private float runSpeed = 5;
+    private float walkspeed = 5f;
+    private float runSpeed = 6;
 
     private CharacterController charCtrl;
 

@@ -25,10 +25,10 @@ namespace Player
 
             if (Physics.Raycast(bulletOrigin[0].transform.position, bulletOrigin[0].transform.forward, out hit, range, layers))
             {
-                if (hit.collider.TryGetComponent<EnemyHealth>(out EnemyHealth target))
-                {
-                    target.Dano();
-                }
+                //if (hit.collider.TryGetComponent<EnemyHealth>(out EnemyHealth target))
+                //{
+                //    target.Dano();
+                //}
                 AudioManager.instance.Play("Shoot");
                 CreateBulletImpact(hit);
                 EffectShoot();

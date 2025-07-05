@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     public bool[] objetos = new bool[9];
 
-    public bool[] keyID = new bool[9];
+    public bool[] keyID = new bool[10];
 
     private void Start()
     {

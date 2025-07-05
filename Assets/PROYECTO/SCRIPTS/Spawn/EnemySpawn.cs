@@ -24,9 +24,14 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private SpawnPoints roundSpawnsData;
     private Transform[] currentRoundSP;
 
+    [Header("Sistema Llaves")]
+    [SerializeField] private GameObject[] keys;
+    private int indexKey = 0;
+
     private void Start()
     {
         StartPool();
+        keys[indexKey].SetActive(true);
     }
 
     private void StartPool()
@@ -72,9 +77,11 @@ public class EnemySpawn : MonoBehaviour
         {
             charKilledPerRound = 0;
             round++;
+            indexKey++;
             characterPerRound = Random.Range(8, 13);
             charSpawnedPerRound = 0;
 
+            keys[indexKey].SetActive(true);
             UpdateSpawnPoints();
         }
     }
