@@ -55,7 +55,7 @@ public class InventoryUIHandler : MonoBehaviour
         for (int i = itemIndexCount; i < inventory._Inventario.Count; i++) // itemIndexCount = 5
         {
             GameObject newUiItem = Instantiate(uiItem); // Instancio el item
-            newUiItem.transform.parent = instanceDestination.transform; // Lo emparento en el canvas para que se acomode con el layoutgroup
+            newUiItem.transform.SetParent(instanceDestination.transform); // Lo emparento en el canvas para que se acomode con el layoutgroup
             newUiItem.GetComponent<UIItem>().SetItemInfo(inventory._Inventario[itemIndexCount]); // Le asigno la informacion consiguiendo el metodo SetInfo de el script UIItem que contiene el item del canvas
             newUiItem.transform.localScale = Vector3.one; // Le reseteo la escala a 1,1,1 por que a veces se escala de manera misteriosa
             itemsInstanciados[i] = newUiItem; // lo agrego a mi arreglo para tenerlo guardado para una futura ocasion

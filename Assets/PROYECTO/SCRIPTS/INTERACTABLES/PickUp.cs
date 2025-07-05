@@ -20,7 +20,7 @@ public class PickUp : MonoBehaviour, IInteractable
         inventory.AgregarObjeto(item);
         Debug.Log(item.name + " Añadida al inventario");
         Debug.Log("Descripcion: " + item._description);
-        GameManager.instance.objetos[id] = true;
+        GameManager.instance.keyID[id] = true;
         Destroy(gameObject);
     }
 }

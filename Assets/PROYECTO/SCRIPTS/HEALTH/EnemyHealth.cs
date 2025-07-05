@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -25,5 +23,17 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }    
+    }   
+    
+    public void Dano()
+    {
+        vida -= dano;
+    }
+
+    [ContextMenu("Matar Personaje")]  //aparece un boton para matar al personaje
+    public void KillCharacter()
+    {
+        EnemySpawn spawn = FindObjectOfType<EnemySpawn>();
+        spawn.OnCharacterKilled(this.gameObject);
+    }
 }
