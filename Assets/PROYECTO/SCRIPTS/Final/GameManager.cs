@@ -4,9 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool[] objetos = new bool[9];
-
-    public bool[] keyID = new bool[10];
+    public int score;
 
     private void Start()
     {

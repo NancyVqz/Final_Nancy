@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class UIItem : MonoBehaviour
 {
-    public Image itemImage;
-    public TMP_Text itemName;
-    public TMP_Text itemDescription;
+    public TMP_Text playerNameText;
+    public TMP_Text scoreText;
+    public Image userAvatarImage;
 
-    public void SetItemInfo(Item item)
+    public void SetPlayerInfo(string username, int score, Sprite avatar)
     {
-        itemImage.sprite = item._sprite;
-        itemName.text = item._name;
-        itemDescription.text = item._description;
+        playerNameText.text = username;
+        scoreText.text = score.ToString();
+        userAvatarImage.sprite = avatar;
     }
 
 }

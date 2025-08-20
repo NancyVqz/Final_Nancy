@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Door
   - Enemigo
   - Bala
   - Ground
+  - Objetivo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - Objetivo
   - Water
   - UI
   - Interactable

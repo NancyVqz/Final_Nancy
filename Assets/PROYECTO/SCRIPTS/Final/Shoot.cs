@@ -1,38 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    private float velocidadBala = 970;
-
-    private Transform puntoDisparo;
-
-    private float machineCont = 0;
-
-    [SerializeField]
-    private GameObject bala;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private int range;
+    [SerializeField] private LayerMask layerTarget;
+    [SerializeField] private LayerMask layerExtra;
 
     private void Start()
     {
-        puntoDisparo = transform.parent;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && machineCont <= 0)
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * range, Color.red);
+
+        if (Input.GetMouseButtonDown(0))
         {
             AudioManager.instance.Play("Shoot");
-            DispararBala();
-            machineCont = 1f;
+            MouseEnter();
         }
-        machineCont -= Time.deltaTime;
     }
 
-    private void DispararBala()
+    private void MouseEnter()
     {
-        GameObject cosa = Instantiate(bala, puntoDisparo.position, bala.transform.rotation);
-        cosa.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadBala);
-        Destroy(cosa, 2f);
+        ObjectiveSpawn objectiveSpawn = FindObjectOfType<ObjectiveSpawn>();
+        ContadorTime contadorTime = FindObjectOfType<ContadorTime>();
+        RaycastHit hit;
+
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range, layerTarget))
+        {
+            objectiveSpawn.OnObjectiveClicked(hit.collider.gameObject);
+        } 
+        else if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, range, layerExtra))
+        {
+            contadorTime.ExtraTime();
+            Destroy(hit.collider.gameObject);
+        }
+
+
     }
 }
